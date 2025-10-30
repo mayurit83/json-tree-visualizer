@@ -1,157 +1,140 @@
-🧩 JSON Tree Visualizer
+🌳 JSON Tree Visualizer
 
-An interactive web app built with React Flow to visualize JSON data in a simple and clear tree structure.
-You can paste any JSON, view it as a connected tree, search by path, and explore using zoom and pan options.
-It also supports dark mode, reset, and download features for better usability.
-
-🌐 Live Demo: [Add your deployed link here]
+An interactive web app that helps you visualize JSON data as a clean and colorful tree structure.
+Built with React and React Flow, this tool makes it easy to explore, search, and understand any JSON file in a visual way.
 
 ✨ Features
-Main Features
+✅ Core Features
 
-📝 Paste or type JSON data directly into the text area
+JSON Input & Validation: Paste or type your JSON data and check if it’s valid.
 
-🚫 Validates JSON and shows error if input is invalid
+Generate Tree: One click to create a complete visual tree structure.
 
-🌳 Visualize JSON structure in a tree format using React Flow
+Color-Coded Nodes:
 
-🎨 Different colors for each type of node:
+🔵 Objects: Blue or purple shade
 
-🔵 Objects: Blue or purple
+🟢 Arrays: Green shade
 
-🟢 Arrays: Green
+🟠 Primitives: Orange or yellow shade
 
-🟠 Primitive values: Orange or yellow
+Search by JSON Path: Example → $.user.address.city or items[0].name
 
-🔍 Search by JSON path (like $.user.address.city or items[0].name)
+Highlight & Pan: Automatically highlights and centers the matched node.
 
-🧭 Automatically highlights and centers the matched node
+Search Result Message: Shows “Match found” or “No match found”.
 
-💬 Shows “Match found” or “No match found” message
+💡 Extra Features (Bonus)
 
-Extra Features
+🌗 Dark / Light Mode: Switch theme easily.
 
-🌗 Dark and Light mode toggle
+🧹 Clear Button: Reset or clear JSON input quickly.
 
-♻️ Clear/Reset button to remove input or restore sample JSON
+📋 Copy JSON Path: Click any node to copy its path.
 
-📋 Click any node to copy its JSON path
+📸 Download Tree: Save your visualization as an image (PNG).
 
-🖼 Download tree as an image
+🔍 Zoom & Pan Controls: Smoothly explore big JSON files.
 
-🔎 Zoom In / Zoom Out / Fit View controls
+🖱️ Hover Info: Shows node path and value when you hover.
 
-🖱 Drag canvas to move around large trees
-
-💡 Hover a node to view its path and value
-
-🧾 Includes sample JSON for quick testing
+🧾 Sample JSON: Preloaded example for quick demo.
 
 🚀 Getting Started
-Requirements
+Prerequisites
 
-Node.js (version 16 or newer)
+Make sure you have:
 
-npm or yarn
+Node.js version 16 or higher
 
-Steps to Run
+npm or yarn installed
+
+Installation Steps
 # 1. Clone the repository
 git clone <your-repo-url>
-cd json-tree-visualizer
+cd json-tree-visualizer-main
 
 # 2. Install dependencies
 npm install
 
-# 3. Start the project
+# 3. Start the development server
 npm run dev
 
 
-Then open your browser and go to 👉 http://localhost:5173
+Open your browser and go to http://localhost:5173/
 
-To Build for Deployment
-npm run build
+🧭 How to Use
 
+Enter JSON:
+Paste or type your JSON data in the left input box.
+(You can also use the preloaded sample.)
 
-The final build will be available in the dist folder.
+Click “Generate Tree”:
+The JSON structure will appear on the right side as a connected node tree.
 
-📖 How to Use
+Search by JSON Path:
+Example →
 
-Add JSON
-Paste your JSON or use the sample provided.
-Click Generate Tree to visualize.
+$.user.name
 
-Explore the Tree
-Each node represents a key or value from the JSON.
-Use zoom or drag to explore.
+$.user.address.city
 
-Search by Path
-Type a JSON path (like $.user.name) and press Enter.
-The matched node will highlight automatically.
+$.items[0].name
 
-Interact with Nodes
+The matched node will be highlighted and centered.
 
-Click to copy the node path
+Interact with the Tree:
 
-Hover to see details
+Click on any node to copy its path.
 
-Download the entire tree as an image
+Hover to see its details.
 
-Theme Toggle
-Switch between Dark 🌙 and Light ☀️ modes anytime.
+Use zoom and pan for navigation.
+
+Download your tree as an image.
+
+Switch Theme:
+Toggle between light and dark mode from the top-right button.
 
 🎨 Node Colors
 Type	Color	Description
-Object	🔵 Blue/Purple	JSON objects {}
-Array	🟢 Green	JSON arrays []
-Primitive	🟠 Orange/Yellow	Strings, numbers, booleans, null
-🛠 Tech Stack
+Object	Blue / Purple	JSON objects {}
+Array	Green	JSON arrays []
+Primitive	Orange / Yellow	Strings, numbers, booleans, null
+🛠️ Tech Stack
 
-React 18 – Frontend framework
+React 18 – UI framework
 
-Vite – Build and development tool
+Vite – Fast build tool and dev server
 
-React Flow – Used for creating the tree visualization
+React Flow – For node-based visualization
 
-HTML-to-Image – Used for exporting as image
+HTML-to-Image – To export visualization as image
 
-CSS / Tailwind – Styling and layout
+CSS3 – Styling with gradients and animations
 
-📂 Folder Structure
-json-tree-visualizer/
+📂 Project Structure
+json-tree-visualizer-main/
 ├── src/
 │   ├── components/
-│   │   ├── CustomNode.jsx       # Node component
+│   │   ├── CustomNode.jsx       # Custom React Flow node
 │   │   └── CustomNode.css       # Node styling
 │   ├── utils/
-│   │   └── jsonToTree.js        # JSON parsing logic
-│   ├── App.jsx                  # Main app component
-│   ├── App.css                  # Styling
-│   ├── main.jsx                 # Entry point
-│   └── index.css                # Global styles
-├── index.html                   # HTML template
+│   │   └── jsonToTree.js        # JSON to tree conversion logic
+│   ├── App.jsx                  # Main component
+│   ├── App.css                  # Main styles
+│   ├── index.css                # Global styles
+│   └── main.jsx                 # Entry point
+├── index.html                   # Root HTML file
 ├── package.json                 # Scripts and dependencies
-├── vite.config.js               # Vite config
+├── package-lock.json
 └── README.md                    # Documentation
 
-🌐 Deployment
-Vercel
+📦 Build for Production
 npm run build
-vercel --prod
 
-Netlify
-npm run build
-# Upload the dist folder to Netlify
 
-GitHub Pages
-
-Update the base path in vite.config.js
-
-Build and push:
-
-npm run build
-git add dist -f
-git commit -m "Deploy"
-git subtree push --prefix dist origin gh-pages
+All optimized files will be created inside the dist/ folder, ready for deployment.
 
 🎯 Example JSON Paths
 {
@@ -165,34 +148,23 @@ git subtree push --prefix dist origin gh-pages
 }
 
 
-Search examples:
+Search Examples:
 
-$.user.name → John
+$.user.name → “John”
 
-$.user.address.city → New York
+$.user.address.city → “New York”
 
-$.items[0].name → Laptop
+$.items[0].name → “Laptop”
 
-$ → Root object
+🤝 Contributing
 
-🤝 Contribution
-
-Contributions and suggestions are always welcome!
-You can open an issue or submit a pull request on GitHub.
+If you’d like to improve this project, feel free to fork the repo and create a pull request.
 
 📝 License
 
-This project is open source and available under the MIT License.
+This project is open-source under the MIT License.
 
-🙏 Acknowledgments
+💬 Contact
 
-React Flow
-
-Vite
-
-React
-
-👩‍💻 Author
-
-Mayuri Thorat
-Built with ❤️ using React and React Flow.
+For any queries or suggestions, feel free to reach out.
+Made with ❤️ using React and React Flow.
